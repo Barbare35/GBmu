@@ -177,7 +177,7 @@ void	Cpu_z80::LD_n_SP() //0x08
 
 void	Cpu_z80::ADD_HL_BC() //0x09
 {
-	if (((_cpuRegister.HL & 0x0f) + (_cpuRegister.DE & 0x0f)) > 0x0f)
+	if (((_cpuRegister.HL & 0x0fff) + (_cpuRegister.BC & 0x0fff)) > 0x0fff)
 		_cpuRegister.h = 1;
 	else
 		_cpuRegister.h = 0;
@@ -282,7 +282,7 @@ void	Cpu_z80::JR_n() //0x18
 
 void	Cpu_z80::ADD_HL_DE() //0x19
 {
-	if (((_cpuRegister.HL & 0x0f) + (_cpuRegister.DE & 0x0f)) > 0x0f)
+	if (((_cpuRegister.HL & 0x0fff) + (_cpuRegister.DE & 0x0fff)) > 0x0fff)
 		_cpuRegister.h = 1;
 	else
 		_cpuRegister.h = 0;
@@ -401,7 +401,7 @@ void	Cpu_z80::JR_Z_n() //0x28
 
 void	Cpu_z80::ADD_HL_HL() //0x29
 {
-	if (((_cpuRegister.HL & 0x0f) + (_cpuRegister.DE & 0x0f)) > 0x0f)
+	if (((_cpuRegister.HL & 0x0fff) + (_cpuRegister.HL & 0x0fff)) > 0x0fff)
 		_cpuRegister.h = 1;
 	else
 		_cpuRegister.h = 0;
@@ -510,7 +510,7 @@ void	Cpu_z80::JR_C_n() //0x38
 
 void	Cpu_z80::ADD_HL_SP() //0x39
 {
-	if (((_cpuRegister.HL & 0x0f) + (_cpuRegister.DE & 0x0f)) > 0x0f)
+	if (((_cpuRegister.HL & 0x0fff) + (_cpuRegister.SP & 0x0fff)) > 0x0fff)
 		_cpuRegister.h = 1;
 	else
 		_cpuRegister.h = 0;
