@@ -104,6 +104,9 @@
     <property name="text">
      <string>1</string>
     </property>
+    <property name="maxLength">
+     <number>6</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
